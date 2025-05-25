@@ -1,5 +1,5 @@
 ⚡ What is Next.js?<br/>
-Next.js is a React framework for building production-grade web applications. It provides structure and tooling out of the box and focuses on:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next.js is a React framework for building production-grade web applications. It provides structure and tooling out of the box and focuses on:<br/>
 - Server-side rendering (SSR)<br/>
 - Static site generation (SSG)<br/>
 - Routing<br/>
@@ -28,8 +28,10 @@ cd my-next-app
 npm run dev     # Starts development server
 code .          # Open in VS Code
 ```
-This scaffolds a project with a sensible folder structure and built-in features.
+This scaffolds a project with a sensible folder structure and built-in features.<br/>
+
 <br/>
+
 
 📁 Folder Structure Overview<br/>
 
@@ -63,7 +65,7 @@ const Post = () => {
 <br/>
 
 ✨ Page Rendering Methods<br/>
-Next.js offers different ways to render pages:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next.js offers different ways to render pages:<br/>
 1. Static Site Generation (SSG) – Build HTML at build time<br/>
 ```
 export async function getStaticProps() {}
@@ -115,6 +117,8 @@ Lazy loading<br/>
 Automatically resized<br/>
 Optimized formats
 <br/>
+<br/>
+
 
 🌐 Metadata and Head<br/>
 Use the built-in <Head> component to customize the HTML <head>:
@@ -158,7 +162,7 @@ Or deploy to other platforms like Netlify, AWS, etc.
 ✅ Summary<br/>
 - Next.js is a full-featured framework on top of React.<br/>
 - It gives you routing, SSR/SSG, API routes, and performance out of the box.<br/>
--Best suited for SEO-optimized, production-grade applications.<br/>
+- Best suited for SEO-optimized, production-grade applications.<br/>
 - You can still use all React features inside Next.js components.
 
 
