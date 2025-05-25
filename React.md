@@ -31,9 +31,11 @@ Naming convention: PascalCase (e.g., MyComponent.tsx).
 <br/>
 🧬 JSX (JavaScript XML)<br/>
 JSX lets you write HTML-like syntax in JavaScript:
+
 ```
 return <h1>Hello, {name}</h1>;
 ```
+
 Wrap multiple elements in one parent (e.g., <div> or <> </>).<br/>
 You can use JavaScript expressions inside {}.<br/>
 onClick, onChange, etc., are used as event handlers.<br/>
@@ -61,6 +63,7 @@ function Greeting({ name }: { name: string }) {
   return <p>Hello, {name}!</p>;
 }
 ```
+
 State: Internal data that changes over time.<br/>
 ```
 const [count, setCount] = useState(0);
