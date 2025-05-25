@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is my website built with Next.js and Tailwind CSS. I am planning to practice my DevOps skills, projects, and achievements in an elegant and responsive design.
+This is my website built with Next.js and Tailwind CSS. I am planning to practice my DevOps skills, build projects, and showcase my achievements in an elegant and responsive design.
 
 ## Installation
 
