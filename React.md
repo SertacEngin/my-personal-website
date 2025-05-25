@@ -48,6 +48,13 @@ And the simpliest way is to wrap all the children into empty angle brackets.
 
 In JSX we don’t have a for loop.
 
+"let" keyword is used to declare variables.
+It's block-scoped (only available within {}).
+It can be reassigned, but not redeclared in the same scope.
+Use let when you expect the variable’s value to change later.
 
+Inside braces {} we can render anything dynamically in JSX. 
+
+In React each element has a property or a prop called “onClick”.
 
 
