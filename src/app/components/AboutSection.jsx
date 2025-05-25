@@ -9,12 +9,12 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li>AWS Cloud Infrastructure</li>
+        <li>CI/CD Pipelines</li>
+        <li>Kubernetes</li>
+        <li>Terraform</li>
+        <li>Prometheus and Grafana</li>
+        <li>Ansible</li>
       </ul>
     ),
   },
@@ -23,8 +23,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Master of Electrical Engineering and IT</li>
+        <li>Technische Hochschule Deggendorf</li>
       </ul>
     ),
   },
@@ -33,8 +33,7 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>AWS Certified Solutions Architect - Associate</li>
       </ul>
     ),
   },
@@ -57,12 +56,15 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            Hi, I&apos;m a passionate IT enthusiast with a strong foundation and a growing specialization in cloud infrastructure, DevOps, and IT automation.<br /><br />
+
+After completing my Master&apos;s in Electrical Engineering and IT with a focus on automation, I started my professional journey as a software engineer at congatec GmbH. There, I developed and tested low-level firmware solutions and diagnostic tools, gaining valuable experience with Python, Linux, and systems programming.<br /><br />
+
+Over time, I discovered a deeper interest in scalable and resilient IT infrastructures. To pursue this direction, I independently upskilled in AWS, Terraform, Kubernetes, and CI/CD practices. I earned the AWS Certified Solutions Architect – Associate certification and began applying these skills to personal projects and automated workflows.<br /><br />
+
+I thrive in environments where automation, observability, and collaboration come together to create efficient and reliable systems. I enjoy solving complex problems, learning new technologies, and being part of communities that value openness and growth.<br /><br />
+
+Currently, I&apos;m looking to deepen my expertise in DevOps engineering, with a special interest in cloud-native tools, infrastructure as code, and modern data center solutions.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
