@@ -1,60 +1,122 @@
-React is a Javascript library for building dynamic and interactive user interfaces. It is the most used Javascript library for front end development.
+🧠 What is React?
 
-When a web page is loaded in a browser the browser takes the HTML code and creates a tree-like structure called the Document Object Model (DOM). This allows us to use JavaScript and change the page content and response to user actions. For example we can 
-use JavaScript to hide an element when a button is clicked. This is called vanilla JavasScript meaning plain JavaScript code without any third party tools. As our applications grow working with a DOM can become quite complex and challenging to manage. 
-This is where React comes into play. With react we no longer need to worry about querying and updating DOM elements. Instead we work with small reuseable components and React will take care of efficiently creating and updating DOM elements. So components 
-help us write reusable, modular and better code.
+React is a JavaScript library for building dynamic and interactive user interfaces, especially for single-page applications. It was developed by Facebook and is now the most widely used library for front-end development.
+🌐 DOM & Vanilla JavaScript
 
-Essentially a React application is a tree of components with the app being the root bringing everything together.
+When a webpage loads, the browser parses HTML into a Document Object Model (DOM) — a tree-like structure. Using vanilla JavaScript (plain JS without libraries), we can manipulate this DOM, such as showing/hiding elements. But as apps grow, direct DOM manipulation becomes error-prone and hard to manage.
+🧩 Why React?
 
-There are 2 ways to create a react app. First we can use the official tool provided by the react team. It’s called Create React App (CRA). And we have another tool called Vite. That’s getting increasingly popular because it’s faster and gives us smaller 
-bundle sizes. This is what we will use.
+React abstracts away direct DOM manipulation by letting us create components — small, reusable UI blocks. React manages updating and rendering efficiently through a virtual DOM. A React app is essentially a tree of components, with the App component at the root.
+⚙️ Creating a React App
 
-For that we run “npm create vite@latest”. For the framework we select React. And we select TypeScript for the language.
+There are two popular ways to scaffold a new React project:
 
-Then we run “cd react-app” and “npm install” commands.
-To open our project in VS code, we run “code .”.
-We can use the embedded terminal in VS code. It’s easier than switching between VS code and a different terminal window.
+    Create React App (CRA) – Official but slower.
 
-Then we run “npm run dev” command.
-“npm run dev” tells npm (Node Package Manager) to run a custom script defined in our project’s package.json file under the “scripts” section.
-This starts a local development server.
-Watches for file changes and reloads the app automatically.
-Runs a bundler like Vite, Webpack, or Next.js in development mode.
+    Vite – Modern, faster bundler. Preferred nowadays.
 
-To create a new component we right click on the src folder and choose new file. The extension of the file should be either .ts or .tsx. We often use .ts for plain TypeScript files and .tsx for React components. We will use the function based approach.
+npm create vite@latest
+# Select: React + TypeScript
+cd react-app
+npm install
+code .           # Open in VS Code
+npm run dev      # Starts local dev server
 
-JSX stands for JavaScript XML. With JSX we can describe the user interface of our application with HTML and JavaScript. It allows us to create dynamic content. 
+📁 Project Structure & Files
 
-React Native is a JavaScript framework for building mobile apps for iOS and Android that are rendered natively, meaning they feel and look like apps developed using native languages like Swift or Java. It allows developers to write a single codebase and 
-deploy it to both platforms, offering advantages like faster development and reduced code maintenance.
+    All components go in src/components/.
 
-So React is a JavaScript library for creating user interfaces. In contrast ro React we have other tools like Angular and View which are Frameworks. What is the difference between a library and a framework?
-A library is a tool that provides specific functionality. So a library is a collection of pre-written code that developers can reuse to perform specific tasks.
-A framework is a set of tools and guidelines for building apps. Frameworks provide a pre-defined structure or architecture for building applications, and your code is executed within that framework's control. Essentially, you call library functions, while 
-a framework calls your code
-So a library is like a tool while a framework is like a tool set.
+    Use .tsx for React components (TS + JSX).
 
-Bootstrap is a popular css library that we will use. We install it with “npm install bootstrap@latest”.
+    Use .ts for plain TypeScript files.
 
-By convention we put all out folder in a folder called components in the src folder.
+    Naming convention: PascalCase (e.g., MyComponent.tsx).
 
-Pascal convention is capitalizing the first letter of each word.
+🧬 JSX (JavaScript XML)
 
-Tip: We can use ctrl+D to have multiple cursor. We can use them when we need to change the name of multiple occurances.
+JSX lets you write HTML-like syntax in JavaScript:
 
-A component cannot return more than one element in React. One simple solution is to wrap the entire expression inside a div or another element.
-And the simpliest way is to wrap all the children into empty angle brackets.
+return <h1>Hello, {name}</h1>;
 
-In JSX we don’t have a for loop.
+    Wrap multiple elements in one parent (e.g., <div> or <> </>).
 
-"let" keyword is used to declare variables.
-It's block-scoped (only available within {}).
-It can be reassigned, but not redeclared in the same scope.
-Use let when you expect the variable’s value to change later.
+    You can use JavaScript expressions inside {}.
 
-Inside braces {} we can render anything dynamically in JSX. 
+    onClick, onChange, etc., are used as event handlers.
 
-In React each element has a property or a prop called “onClick”.
+🚫 JSX does not support for loops directly. Use map() instead:
 
-One of the beauties of TypeScript is that we get auto completion, we get type safety and it is easier to refactor or restructure our code.
+{items.map(item => <li key={item.id}>{item.name}</li>)}
+
+💡 Variables in TypeScript/JSX
+
+    Use let for block-scoped variables that may change.
+
+    Use const for variables that won’t change.
+
+🖱️ Event Handling
+
+React uses camelCase for events:
+
+<button onClick={handleClick}>Click me</button>
+
+🧠 Props and State
+
+    Props: Inputs to a component (read-only).
+
+function Greeting({ name }: { name: string }) {
+  return <p>Hello, {name}!</p>;
+}
+
+    State: Internal data that changes over time.
+
+const [count, setCount] = useState(0);
+
+🛠️ Bootstrap Integration
+
+To use Bootstrap:
+
+npm install bootstrap@latest
+
+In main.tsx or App.tsx:
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+💥 Hooks
+
+React Hooks let you use state and lifecycle features in function components:
+
+    useState – Manage local state.
+
+    useEffect – Side effects like fetching data or timers.
+
+    useRef – Reference DOM elements or persist values between renders.
+
+📦 TypeScript Benefits in React
+
+    Type Safety: Catch errors during development.
+
+    Autocomplete: Faster and easier coding.
+
+    Refactoring: Safer restructuring of code.
+
+⚖️ React vs. Frameworks
+
+    React is a library, not a full framework.
+
+    Angular, Vue are frameworks: they impose more structure and call your code.
+
+    You call a library, but a framework calls your code (Inversion of Control).
+
+📱 React Native
+
+React Native lets you build mobile apps with React. Apps look and feel native but are written in JavaScript and rendered natively on iOS and Android.
+⌨️ Tips for Productivity
+
+    Use Ctrl + D in VS Code for multi-cursor editing.
+
+    Use snippets or extensions like ES7+ React/Redux snippets to speed up coding.
+
+✅ Summary
+
+React helps you build fast, scalable user interfaces using components. With tools like Vite and TypeScript, the development experience is smooth and efficient.
