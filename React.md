@@ -57,4 +57,4 @@ Inside braces {} we can render anything dynamically in JSX.
 
 In React each element has a property or a prop called “onClick”.
 
-
+One of the beauties of TypeScript is that we get auto completion, we get type safety and it is easier to refactor or restructure our code.
