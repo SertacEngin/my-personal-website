@@ -16,13 +16,13 @@ jobs:
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.8.1
       with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-private-key: ${{ secrets.SSHPRIVATEKEY }}
 
     - name: Deploy via SSH
       run: |
-        ssh -o StrictHostKeyChecking=no user@157.180.122.108 "
-          cd /path/to/your/website &&
+        ssh -o StrictHostKeyChecking=no root@157.180.122.108 "
+          cd /sertac/my-personal-website &&
           git pull origin main &&
-          # your deployment commands here, e.g.:
+          # our deployment commands here, e.g.:
           sudo systemctl restart nginx
         "
