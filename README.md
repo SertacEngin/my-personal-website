@@ -2,7 +2,7 @@
 
 This is my website (www.sertacengin.com) built with Next.js and Tailwind CSS. I am planning to practice my DevOps skills, build projects, and showcase my achievements in an elegant and responsive design.
 
-I used Vercel to quickly prototype and deploy my personal site with automatic deployments on every Git push. Next, I will move to Hetzner with Docker and GitHub Actions to do more with CI/CD pipelines, Linux servers, and container orchestration.
+I used Vercel to quickly prototype and deploy my personal site with automatic deployments on every Git push. Next, I moved to Hetzner with Docker and GitHub Actions to do more with CI/CD pipelines, Linux servers, and container orchestration.
 
 ## Installation
 
