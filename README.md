@@ -4,6 +4,8 @@ This is my website (www.sertacengin.com) built with Next.js and Tailwind CSS. I 
 
 I used Vercel to quickly prototype and deploy my personal site with automatic deployments on every Git push. Next, I moved to Hetzner with Docker and GitHub Actions to do more with CI/CD pipelines, Linux servers, and container orchestration.
 
+Next I will work on Containerization and add databases to the website.
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/SertacEngin/my-personal-website`
