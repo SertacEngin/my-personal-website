@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.8.1
-      with:
-        ssh-private-key: ${{ secrets.SSHPRIVATEKEY }}
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSHPRIVATEKEY }}
 
-    - name: Deploy via SSH
-      run: |
-        ssh -o StrictHostKeyChecking=no root@157.180.122.108 "
-          cd /sertac/my-personal-website &&
-          git pull origin main &&
-          # our deployment commands here, e.g.:
-          sudo systemctl restart nginx
-        "
+      - name: Deploy via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no root@157.180.122.108 "
+            cd /sertac/my-personal-website &&
+            git pull origin main &&
+            # our deployment commands here, e.g.:
+            sudo systemctl restart nginx
+          "
