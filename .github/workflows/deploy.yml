@@ -1,4 +1,4 @@
-name: Deploy to Server
+name: Deploy to Hetzner
 
 on:
   push:
@@ -13,13 +13,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies & build
+        run: |
+          npm ci
+          npm run build
+
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.7.0
+        uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSHPRIVATEKEY }}
 
-      - name: Test SSH connection
-        run: ssh -o StrictHostKeyChecking=no root@157.180.122.108 "echo Connected"
+      - name: Sync project to server
+        run: |
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" . root@157.180.122.108:/var/www/my-personal-website/
 
-      - name: Deploy via SSH
-        run: ssh -o StrictHostKeyChecking=no root@157.180.122.108 "cd /sertac/my-personal-website && git pull && sudo systemctl restart nginx"
+      - name: Restart app on server
+        run: |
+          ssh -o StrictHostKeyChecking=no root@157.180.122.108 << 'EOF'
+            cd /var/www/my-personal-website
+            npm install --omit=dev
+            pm2 delete my-site || true
+            pm2 start npm --name my-site -- run start
+            pm2 save
+          EOF
