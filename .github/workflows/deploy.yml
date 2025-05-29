@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main
+      - main # or your default branch
 
 jobs:
   deploy:
@@ -13,16 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.4
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.0
         with:
-          ssh-private-key: ${{ secrets.SSHPRIVATEKEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy via SSH
-        run: |
-          ssh -o StrictHostKeyChecking=no root@157.180.122.108 "
-            cd /sertac/my-personal-website &&
-            git pull origin main &&
-            # our deployment commands here, e.g.:
-            sudo systemctl restart nginx
-          "
+        run: ssh -o StrictHostKeyChecking=no root@YOUR_SERVER_IP "cd /var/www/your-folder && git pull && sudo systemctl restart nginx"
