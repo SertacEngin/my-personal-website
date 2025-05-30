@@ -10,6 +10,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>AWS Cloud Infrastructure</li>
+        <li>Linux Environment</li>
         <li>CI/CD Pipelines</li>
         <li>Kubernetes</li>
         <li>Terraform</li>
