@@ -14,7 +14,19 @@ Next comes deployment. On successful build, the pipeline connects to the remote 
 
 In this way, the CI/CD pipeline automates every stage from code commit to live deployment, reducing manual errors, speeding up feedback loops, and ensuring that the production server always runs the latest tested code. This approach is critical in professional environments to maintain high code quality and rapid iteration cycles.
 
-Next I will work on Containerization and add databases to the website.
+Containerizing the Application and Exposing it via Docker
+I containerized the application using Docker, which means I packaged the app along with
+everything it needs to run into a portable container. This makes it easy to deploy and run
+consistently across different environments.
+Once the container was running on the server, I exposed the application on a specific port,
+allowing it to accept incoming connections. I confirmed that the app was accessible directly
+through the server’s IP address and port, proving the container was working correctly.
+The app is running on our server and can be reached using the server’s IP address plus port
+8080 (157.180.122.108:8080)
+
+While this project currently runs as a single Docker container, Kubernetes could be introduced to manage and scale the application in more complex scenarios. Kubernetes would help automate deployment, scaling, and management of multiple containers across clusters, improving reliability and availability.
+
+However, for the current simple setup with just one container, Kubernetes is not required and would add unnecessary complexity. Docker alone provides a straightforward and efficient way to run this application.
 
 ## Installation
 
