@@ -14,8 +14,6 @@ Next comes deployment. On successful build, the pipeline connects to the remote 
 
 In this way, the CI/CD pipeline automates every stage from code commit to live deployment, reducing manual errors, speeding up feedback loops, and ensuring that the production server always runs the latest tested code. This approach is critical in professional environments to maintain high code quality and rapid iteration cycles.
 
-I set up the
-
 Next I will work on Containerization and add databases to the website.
 
 ## Installation
