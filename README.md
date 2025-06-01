@@ -28,6 +28,8 @@ While this project currently runs as a single Docker container, Kubernetes could
 
 However, for the current simple setup with just one container, Kubernetes is not required and would add unnecessary complexity. Docker alone provides a straightforward and efficient way to run this application.
 
+Prometheus is a monitoring system that collects metrics from an app or server (like CPU, memory usage, HTTP requests, etc.) via endpoints. And Grafana is a dashboard tool that visualizes the metrics collected by Prometheus.
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/SertacEngin/my-personal-website`
