@@ -30,6 +30,8 @@ However, for the current simple setup with just one container, Kubernetes is not
 
 Prometheus is a monitoring system that collects metrics from an app or server (like CPU, memory usage, HTTP requests, etc.) via endpoints. And Grafana is a dashboard tool that visualizes the metrics collected by Prometheus.
 
+Next, I will set up Terraform and Ansible on my server for IaC and configuration management.
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/SertacEngin/my-personal-website`
