@@ -1,6 +1,6 @@
 # My Personal Website - DevOps Enhanced with Terraform
 
-This repository hosts my personal website, a Node.js application deployed on a Hetzner server running Ubuntu. The project incorporates a robust DevOps setup, including CI/CD pipelines, Docker, Prometheus, Grafana, and now **Terraform** for Infrastructure as Code (IaC). This README details the steps taken to install Terraform, configure it to manage Hetzner infrastructure, and enhance the deployment with a firewall and load balancer, all integrated into the existing DevOps workflow.
+This repository hosts my personal website, a Node.js application deployed on a Hetzner server running Ubuntu. I use various DevOps tools including CI/CD pipelines, Docker, Prometheus, Grafana, and now **Terraform** for Infrastructure as Code (IaC). Terraform is an IAC tool, used primarily by DevOps teams to automate various infrastructure tasks. The provisioning of cloud resources, for instance, is one of the main use cases of Terraform. It's a cloud-agnostic, open-source provisioning tool written in the Go language and created by HashiCorp. Below I explain the steps taken to install Terraform, configure it to manage Hetzner infrastructure, and enhance the deployment with a firewall and load balancer, all integrated into the existing DevOps workflow.
 
 ## Project Overview
 
@@ -24,37 +24,24 @@ To manage the Hetzner infrastructure programmatically, Terraform was installed o
 
    - Used SSH to access the server:
      ```bash
-     ssh root@<server-ip>
+     ssh is key-id root@<server-ip>
      ```
 
-2. **Removed Outdated Terraform Version**:
-
-   - An older version of Terraform was present, which caused a version mismatch error.
-   - Located and removed the old binary:
-     ```bash
-     which terraform
-     sudo rm /usr/local/bin/terraform
-     ```
-   - Verified removal:
-     ```bash
-     terraform --version
-     ```
-
-3. **Installed Prerequisites**:
+2. **Installed Prerequisites**:
 
    - Updated the package manager and installed `unzip`:
      ```bash
      sudo apt update && sudo apt install unzip -y
      ```
 
-4. **Downloaded Terraform 1.12.1**:
+3. **Downloaded Terraform 1.12.1**:
 
    - Downloaded the latest version (1.12.1) for Linux 64-bit:
      ```bash
      wget https://releases.hashicorp.com/terraform/1.12.1/terraform_1.12.1_linux_amd64.zip
      ```
 
-5. **Installed Terraform**:
+4. **Installed Terraform**:
 
    - Extracted the binary and moved it to `/usr/local/bin`:
      ```bash
@@ -67,7 +54,7 @@ To manage the Hetzner infrastructure programmatically, Terraform was installed o
      rm terraform_1.12.1_linux_amd64.zip
      ```
 
-6. **Verified Installation**:
+5. **Verified Installation**:
    - Checked the version to confirm:
      ```bash
      terraform --version
@@ -113,8 +100,8 @@ Terraform was configured to manage Hetzner Cloud resources using two files: `mai
      resource "hcloud_server" "test" {
        name        = "test-server"
        image       = "ubuntu-22.04"
-       server_type = "cx11"
-       location    = "nbg1"
+       server_type = "cx22"
+       location    = "eu-central"
      }
      ```
 
@@ -151,8 +138,8 @@ Terraform was configured to manage Hetzner Cloud resources using two files: `mai
      resource "hcloud_server" "website_server" {
        name        = "my-personal-website"
        image       = "ubuntu-22.04"
-       server_type = "cx21"
-       location    = "nbg1"
+       server_type = "cx22"
+       location    = "eu-central"
        ssh_keys    = ["my-ssh-key"]
      }
      ```
