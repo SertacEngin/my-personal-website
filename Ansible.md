@@ -341,5 +341,3 @@ This project is a foundation for advanced DevOps tasks:
 - **Multi-Server**: Extend the inventory to manage additional servers.
 
 ---
-
-_Built with passion for DevOps and automation._
