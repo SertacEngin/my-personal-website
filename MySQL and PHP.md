@@ -1,6 +1,6 @@
 # Setting Up MySQL and PHP on an Ubuntu Hetzner Server
 
-This guide outlines the process of setting up a MySQL database and PHP on an Ubuntu server hosted on Hetzner, enabling you to practice SQL and build dynamic web applications.
+Here I explain the process of setting up a MySQL database and PHP on my Ubuntu server hosted on Hetzner, enabling us to practice SQL and build dynamic web applications.
 
 ## What is MySQL?
 
